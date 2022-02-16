@@ -1,6 +1,10 @@
 const textField = document.getElementById("text");
 const resetBtn = document.getElementById("reset-btn");
 const inputField = document.getElementById("text-input");
+const buttonTen = document.getElementById("btn-10")
+const buttonTwFv = document.getElementById("btn-25")
+const buttonFifty = document.getElementById("btn-50")
+const buttonHun = document.getElementById("btn-100")
 var length = 25;
 
 window.onload = () => {
@@ -18,8 +22,29 @@ function newText(){
 
 resetBtn.addEventListener("click", () => {
     newText();
-    inputField.value = ""
+    inputField.value = "";
+    inputField.focus();
 });
+
+buttonTen.addEventListener("click", () => {
+    length = 10;
+    newText()
+})
+
+buttonTwFv.addEventListener("click", () => {
+    length = 25;
+    newText()
+})
+
+buttonFifty.addEventListener("click", () => {
+    length = 50;
+    newText()
+})
+
+buttonHun.addEventListener("click", () => {
+    length = 100;
+    newText()
+})
 
 
 
