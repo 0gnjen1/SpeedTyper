@@ -29,21 +29,29 @@ resetBtn.addEventListener("click", () => {
 buttonTen.addEventListener("click", () => {
     length = 10;
     newText()
+    inputField.value = "";
+    inputField.focus();
 })
 
 buttonTwFv.addEventListener("click", () => {
     length = 25;
     newText()
+    inputField.value = "";
+    inputField.focus();
 })
 
 buttonFifty.addEventListener("click", () => {
     length = 50;
     newText()
+    inputField.value = "";
+    inputField.focus();
 })
 
 buttonHun.addEventListener("click", () => {
     length = 100;
     newText()
+    inputField.value = "";
+    inputField.focus();
 })
 
 
