@@ -1,6 +1,11 @@
-const textField = document.getElementById("text")
-const resetBtn = document.getElementById("reset-btn")
-var length = 25
+const textField = document.getElementById("text");
+const resetBtn = document.getElementById("reset-btn");
+const inputField = document.getElementById("text-input");
+var length = 25;
+
+window.onload = () => {
+    newText()
+};
 
 function newText(){
     var text = []
@@ -9,9 +14,14 @@ function newText(){
         text.push(words[index])
     }
     textField.innerHTML = text.join(" ")
-}
+};
 
-resetBtn.addEventListener("click", newText)
+resetBtn.addEventListener("click", () => {
+    newText();
+    inputField.value = ""
+});
+
+
 
 const words = [
     "the",
