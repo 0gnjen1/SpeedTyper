@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+}
+
+html, body {
+    height: 100%;
+    background-color: #E0FBFC;
+}
+
+header {
+    text-align: center;
+    color: #293241;
+    font-size: 11vw;
+    padding: 0.5em;
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+    
+    header {
+        font-size: 8em;
+    }
+
+}
