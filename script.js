@@ -6,10 +6,17 @@ const buttonTwFv = document.getElementById("btn-25")
 const buttonFifty = document.getElementById("btn-50")
 const buttonHun = document.getElementById("btn-100")
 var length = 25;
+var index = 0;
 
 window.onload = () => {
     newText()
 };
+
+function reset(){
+    inputField.value = "";
+    inputField.focus();
+    index = 0;
+}
 
 function newText(){
     var text = []
@@ -22,36 +29,34 @@ function newText(){
 
 resetBtn.addEventListener("click", () => {
     newText();
-    inputField.value = "";
-    inputField.focus();
+    reset();
 });
 
 buttonTen.addEventListener("click", () => {
     length = 10;
     newText()
-    inputField.value = "";
-    inputField.focus();
+    reset();
 })
 
 buttonTwFv.addEventListener("click", () => {
     length = 25;
     newText()
-    inputField.value = "";
-    inputField.focus();
+    reset();
+
 })
 
 buttonFifty.addEventListener("click", () => {
     length = 50;
     newText()
-    inputField.value = "";
-    inputField.focus();
+    reset();
+
 })
 
 buttonHun.addEventListener("click", () => {
     length = 100;
     newText()
-    inputField.value = "";
-    inputField.focus();
+    reset();
+
 })
 
 
