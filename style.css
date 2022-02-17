@@ -17,12 +17,62 @@ header {
     padding: 0.5em;
 }
 
+section {
+    width: 70%;
+    max-width: 45em;
+    margin: 0 auto;
+    padding: 0.5em 1.5em;
+    font-size: 1.8em;
+    letter-spacing: 0.05em;
+    border: 5px solid #3D5A80;
+    border-radius: 20px;
+    background-color: #98C1D9;
+}
 
+#btn-10, #btn-25, #btn-50, #btn-100, #reset-btn {
+    font-size: 0.8em;
+    padding: 0.3em 0.5em;
+    margin: 1em 0;
+    background-color: #98C1D9;
+    border: 5px solid #3D5A80;
+    border-radius: 20px;
+}
+
+#btn-10:hover{
+    background-color: #E0FBFC;
+}
+#btn-25:hover{
+    background-color: #E0FBFC;
+}
+#btn-50:hover{
+    background-color: #E0FBFC;
+}
+#btn-100:hover{
+    background-color: #E0FBFC;
+}
+#reset-btn:hover{
+    background-color: #E0FBFC;
+}
+
+#text-input {
+    font-size: 0.8em;
+    padding: 0.3em 1em;
+    margin: 1em 0;
+    background-color: #E0FBFC;
+    border: 5px solid #3D5A80;
+    border-radius: 20px;
+    width: 20vw;
+}
 
 @media only screen and (min-width: 1200px) {
     
     header {
         font-size: 8em;
+    }
+
+    #btn-10, #btn-25, #btn-50, #btn-100, #reset-btn {
+        margin: 1em 0;
+        padding: 0.3em 1em;
     }
 
 }
