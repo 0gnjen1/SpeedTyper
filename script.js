@@ -21,8 +21,9 @@ function reset(){
 function newText(){
     var text = []
     for(let i=0; i<length; i++){
-        var index = Math.floor(Math.random()*1000)
-        text.push(words[index])
+        var id = Math.floor(Math.random()*1000)
+        var newSpan = `<span id="${i}">${words[id]}</span>`
+        text.push(newSpan)
     }
     textField.innerHTML = text.join(" ")
 };
@@ -42,21 +43,18 @@ buttonTwFv.addEventListener("click", () => {
     length = 25;
     newText()
     reset();
-
 })
 
 buttonFifty.addEventListener("click", () => {
     length = 50;
     newText()
     reset();
-
 })
 
 buttonHun.addEventListener("click", () => {
     length = 100;
     newText()
     reset();
-
 })
 
 
