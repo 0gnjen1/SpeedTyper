@@ -76,3 +76,15 @@ section {
     }
 
 }
+
+.isTyped {
+    color: #ba58a0;
+}
+
+.correct {
+    color: #3CB371;
+}
+
+.wrong {
+    color: #EE6C4D;
+}

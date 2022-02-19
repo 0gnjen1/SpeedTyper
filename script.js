@@ -7,57 +7,71 @@ const buttonFifty = document.getElementById("btn-50");
 const buttonHun = document.getElementById("btn-100");
 var length = 25;
 var index = 0;
+var workingText = []
 
 window.onload = () => {
     newText();
 };
 
 function reset(){
+    newText()
     inputField.value = "";
     inputField.focus();
-    index = 0;
 }
 
 function newText(){
+    index = 0
+    workingText = []
     var text = [];
     for(let i=0; i<length; i++){
         var id = Math.floor(Math.random()*1000);
+        workingText.push(words[id])
         var newSpan = `<span id="${i}">${words[id]}</span>`;
         text.push(newSpan);
     }
     textField.innerHTML = text.join(" ")
+    document.getElementById("0").classList.add("isTyped")
 };
 
-inputField.addEventListener("keydown", e => {
-    pass
+inputField.addEventListener("keyup", e => {
+    if(e.key === " "){
+        console.dir(inputField.value);
+        console.log(workingText[index]);
+        if(inputField.value.toLowerCase().slice(0, -1) == workingText[index]){
+            document.getElementById(index).classList.add("correct");
+            console.log("right!!!");
+        }
+        else{
+            document.getElementById(index).classList.add("wrong");
+            console.log("wrong!!!");
+        };
+        index++;
+        document.getElementById(index).classList.add("isTyped");
+        inputField.value = '';
+    };
 });
 
 resetBtn.addEventListener("click", () => {
-    newText();
     reset();
 });
 
 buttonTen.addEventListener("click", () => {
     length = 10;
-    newText();;
     reset();
 });
 
 buttonTwFv.addEventListener("click", () => {
     length = 25;
-    newText();
     reset();
 });
 
 buttonFifty.addEventListener("click", () => {
     length = 50;
-    newText();
     reset();
 });
 
 buttonHun.addEventListener("click", () => {
     length = 100;
-    newText();
     reset();
 });
 
