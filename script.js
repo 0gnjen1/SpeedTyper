@@ -1,15 +1,15 @@
 const textField = document.getElementById("text");
 const resetBtn = document.getElementById("reset-btn");
 const inputField = document.getElementById("text-input");
-const buttonTen = document.getElementById("btn-10")
-const buttonTwFv = document.getElementById("btn-25")
-const buttonFifty = document.getElementById("btn-50")
-const buttonHun = document.getElementById("btn-100")
+const buttonTen = document.getElementById("btn-10");
+const buttonTwFv = document.getElementById("btn-25");
+const buttonFifty = document.getElementById("btn-50");
+const buttonHun = document.getElementById("btn-100");
 var length = 25;
 var index = 0;
 
 window.onload = () => {
-    newText()
+    newText();
 };
 
 function reset(){
@@ -19,14 +19,18 @@ function reset(){
 }
 
 function newText(){
-    var text = []
+    var text = [];
     for(let i=0; i<length; i++){
-        var id = Math.floor(Math.random()*1000)
-        var newSpan = `<span id="${i}">${words[id]}</span>`
-        text.push(newSpan)
+        var id = Math.floor(Math.random()*1000);
+        var newSpan = `<span id="${i}">${words[id]}</span>`;
+        text.push(newSpan);
     }
     textField.innerHTML = text.join(" ")
 };
+
+inputField.addEventListener("keydown", e => {
+    pass
+});
 
 resetBtn.addEventListener("click", () => {
     newText();
@@ -35,27 +39,27 @@ resetBtn.addEventListener("click", () => {
 
 buttonTen.addEventListener("click", () => {
     length = 10;
-    newText()
+    newText();;
     reset();
-})
+});
 
 buttonTwFv.addEventListener("click", () => {
     length = 25;
-    newText()
+    newText();
     reset();
-})
+});
 
 buttonFifty.addEventListener("click", () => {
     length = 50;
-    newText()
+    newText();
     reset();
-})
+});
 
 buttonHun.addEventListener("click", () => {
     length = 100;
-    newText()
+    newText();
     reset();
-})
+});
 
 
 
