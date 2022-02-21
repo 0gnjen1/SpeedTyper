@@ -14,23 +14,23 @@ window.onload = () => {
 };
 
 function reset(){
-    newText()
+    newText();
     inputField.value = "";
     inputField.focus();
 }
 
 function newText(){
-    index = 0
-    workingText = []
+    index = 0;
+    workingText = [];
     var text = [];
     for(let i=0; i<length; i++){
         var id = Math.floor(Math.random()*1000);
         workingText.push(words[id])
         var newSpan = `<span id="${i}">${words[id]}</span>`;
         text.push(newSpan);
-    }
-    textField.innerHTML = text.join(" ")
-    document.getElementById("0").classList.add("isTyped")
+    };
+    textField.innerHTML = text.join(" ");
+    document.getElementById("0").classList.add("isTyped");
 };
 
 inputField.addEventListener("keyup", e => {
@@ -39,11 +39,9 @@ inputField.addEventListener("keyup", e => {
         console.log(workingText[index]);
         if(inputField.value.toLowerCase().slice(0, -1) == workingText[index]){
             document.getElementById(index).classList.add("correct");
-            console.log("right!!!");
         }
         else{
             document.getElementById(index).classList.add("wrong");
-            console.log("wrong!!!");
         };
         index++;
         document.getElementById(index).classList.add("isTyped");
