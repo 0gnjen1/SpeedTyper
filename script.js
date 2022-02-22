@@ -5,9 +5,11 @@ const buttonTen = document.getElementById("btn-10");
 const buttonTwFv = document.getElementById("btn-25");
 const buttonFifty = document.getElementById("btn-50");
 const buttonHun = document.getElementById("btn-100");
+const letter = /[A-Za-z]{1}/
 var length = 25;
 var index = 0;
 var workingText = []
+var lenInInput = 0
 
 window.onload = () => {
     newText();
@@ -21,6 +23,7 @@ function reset(){
 
 function newText(){
     index = 0;
+    lenInInput = 0;
     workingText = [];
     var text = [];
     for(let i=0; i<length; i++){
@@ -31,13 +34,22 @@ function newText(){
     };
     textField.innerHTML = text.join(" ");
     document.getElementById("0").classList.add("isTyped");
+    inputField.classList.remove("wrong-input");
+};
+
+function checkText(){
+    if(inputField.value === workingText[index].slice(0, lenInInput)){
+        inputField.classList.remove("wrong-input");
+    }
+    else{
+        inputField.classList.add("wrong-input");
+    };
 };
 
 inputField.addEventListener("keyup", e => {
     if(e.key === " "){
-        console.dir(inputField.value);
-        console.log(workingText[index]);
         if(inputField.value.toLowerCase().slice(0, -1) == workingText[index]){
+
             document.getElementById(index).classList.add("correct");
         }
         else{
@@ -46,6 +58,18 @@ inputField.addEventListener("keyup", e => {
         index++;
         document.getElementById(index).classList.add("isTyped");
         inputField.value = '';
+        inputField.classList.remove("wrong-input");
+        lenInInput = 0;
+    }
+    else if(e.key === "Backspace"){
+        if(lenInInput > 0){
+            lenInInput -= 1;
+        };
+        checkText();
+    }
+    else if(e.key.length == 1){
+        lenInInput += 1;
+        checkText();
     };
 });
 

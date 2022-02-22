@@ -107,3 +107,7 @@ footer {
 .wrong {
     color: #EE6C4D;
 }
+
+.wrong-input {
+    background-color: #EE6C4D !important;
+}
